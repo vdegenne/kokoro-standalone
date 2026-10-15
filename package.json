@@ -1,0 +1,45 @@
+{
+	"name": "@vdegenne/kokoro-standalone",
+	"version": "0.1.0",
+	"description": "Snar TS reactive controller using kokoro-js",
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./lib/index.js",
+			"types": "./lib/index.d.ts"
+		},
+		"./settings-template.js": {
+			"import": "./lib/settings-template.js",
+			"types": "./lib/settings-template.d.ts"
+		}
+	},
+	"files": [
+		"./lib"
+	],
+	"scripts": {
+		"build": "wireit"
+	},
+	"wireit": {
+		"build": {
+			"command": "tsc --pretty",
+			"clean": "if-file-deleted",
+			"files": [
+				"./tsconfig.json",
+				"./src"
+			],
+			"output": [
+				"./lib"
+			]
+		}
+	},
+	"devDependencies": {
+		"typescript": "^7.0.2",
+		"wireit": "^0.14.13"
+	},
+	"dependencies": {
+		"@snar/lit": "^1.8.1",
+		"@vdegenne/forms": "^0.1.90",
+		"kokoro-js": "^1.2.1",
+		"lit-html": "^3.3.3"
+	}
+}
