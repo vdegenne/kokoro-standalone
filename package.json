@@ -1,6 +1,6 @@
 {
 	"name": "@vdegenne/kokoro-standalone",
-	"version": "0.1.0",
+	"version": "0.1.2",
 	"description": "Snar TS reactive controller using kokoro-js",
 	"type": "module",
 	"exports": {
